@@ -1,0 +1,120 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Sol taraf */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.slashes {
+    color: orange;
+}
+
+.subtext {
+    font-size: 10px;
+    display: block;
+    color: #f56a00;
+    font-weight: normal;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Sağ taraf */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 14px;
+}
+
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.arrow {
+    font-size: 10px;
+}
+
+.separator {
+    width: 1px;
+    height: 16px;
+    background-color: #999;
+}
+
+.search {
+    cursor: pointer;
+}
+
+.hero-banner {
+    background-color: #000;
+    color: white;
+    min-height: 65vh;
+    /* ekranın %60 yüksekliği kadar alan kaplar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin-top: 60px;
+    padding: 0 20px;
+}
+
+
+.hero-banner h1 {
+    font-size: 42px;
+    font-weight: 800;
+    margin: 15px 0;
+}
+
+@media (max-width: 768px) {
+    .hero-banner h1 {
+        font-size: 28px;
+    }
+}
+
+.navbar-separator {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+}

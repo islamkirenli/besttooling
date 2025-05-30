@@ -1,104 +1,66 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const companyLink = document.getElementById("company-link");
-    const companyDropdown = document.getElementById("company-dropdown");
-    const companyOptions = document.getElementById("company-options");
-    const servicesLink = document.getElementById("services-link");
-    const servicesDropdown = document.getElementById("services-dropdown");
-    const servicesOptions = document.getElementById("services-options");
-    const productsLink = document.getElementById("products-link");
-    const productsDropdown = document.getElementById("products-dropdown");
-    const productsOptions = document.getElementById("products-options");
     const overlay = document.getElementById("overlay");
 
-    if (companyLink && companyDropdown && overlay && companyOptions) {
-        companyLink.addEventListener("click", function (e) {
-            e.preventDefault();
-            e.stopPropagation();
+    const dropdowns = [
+        {
+            linkId: "company-link",
+            dropdownId: "company-dropdown",
+            optionsId: "company-options"
+        },
+        {
+            linkId: "services-link",
+            dropdownId: "services-dropdown",
+            optionsId: "services-options"
+        },
+        {
+            linkId: "products-link",
+            dropdownId: "products-dropdown",
+            optionsId: "products-options"
+        }
+    ];
 
-            const isVisible = companyDropdown.style.display === "block";
+    dropdowns.forEach(({ linkId, dropdownId, optionsId }) => {
+        const link = document.getElementById(linkId);
+        const dropdown = document.getElementById(dropdownId);
+        const options = document.getElementById(optionsId);
 
-            if (isVisible) {
-                companyDropdown.style.display = "none";
+        if (link && dropdown && overlay && options) {
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const isVisible = dropdown.style.display === "block";
+
+                // Tüm dropdownları kapat
+                dropdowns.forEach(({ linkId, dropdownId }) => {
+                    document.getElementById(dropdownId).style.display = "none";
+                    document.getElementById(linkId).classList.remove("active");
+                });
                 overlay.style.display = "none";
-                companyLink.classList.remove("active");
-            } else {
-                const rect = companyLink.getBoundingClientRect();
-                companyOptions.style.setProperty("--company-offset", rect.left + "px");
 
-                companyDropdown.style.display = "block";
-                overlay.style.display = "block";
-                companyLink.classList.add("active");
-            }
-        });
+                // Eğer tıklanan zaten açıksa tekrar açma
+                if (!isVisible) {
+                    const rect = link.getBoundingClientRect();
+                    options.style.setProperty("--company-offset", rect.left + "px");
 
-        document.addEventListener("click", function () {
-            companyDropdown.style.display = "none";
+                    dropdown.style.display = "block";
+                    overlay.style.display = "block";
+                    link.classList.add("active");
+                }
+            });
+        }
+    });
+
+    // Navbar dışına tıklanınca dropdownları kapat
+    document.addEventListener("click", function (event) {
+        const isClickInside = event.target.closest(".nav-link") || event.target.closest(".mega-dropdown");
+
+        if (!isClickInside) {
+            dropdowns.forEach(({ linkId, dropdownId }) => {
+                document.getElementById(dropdownId).style.display = "none";
+                document.getElementById(linkId).classList.remove("active");
+            });
             overlay.style.display = "none";
-            companyLink.classList.remove("active");
-        });
-    }
-
-    if (servicesLink && servicesDropdown && overlay && servicesOptions) {
-        servicesLink.addEventListener("click", function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            const isVisible = servicesDropdown.style.display === "block";
-
-            // Önce diğer dropdownları kapat
-            companyDropdown.style.display = "none";
-            companyLink.classList.remove("active");
-
-            if (isVisible) {
-                servicesDropdown.style.display = "none";
-                overlay.style.display = "none";
-                servicesLink.classList.remove("active");
-            } else {
-                const rect = servicesLink.getBoundingClientRect();
-                servicesOptions.style.setProperty("--company-offset", rect.left + "px");
-
-                servicesDropdown.style.display = "block";
-                overlay.style.display = "block";
-                servicesLink.classList.add("active");
-            }
-        });
-
-        document.addEventListener("click", function () {
-            servicesDropdown.style.display = "none";
-            servicesLink.classList.remove("active");
-        });
-    }
-
-    if (productsLink && productsDropdown && overlay && productsOptions) {
-        productsLink.addEventListener("click", function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            const isVisible = productsDropdown.style.display === "block";
-
-            // Diğer dropdownları kapat
-            companyDropdown.style.display = "none";
-            companyLink.classList.remove("active");
-            servicesDropdown.style.display = "none";
-            servicesLink.classList.remove("active");
-
-            if (isVisible) {
-                productsDropdown.style.display = "none";
-                overlay.style.display = "none";
-                productsLink.classList.remove("active");
-            } else {
-                const rect = productsLink.getBoundingClientRect();
-                productsOptions.style.setProperty("--company-offset", rect.left + "px");
-
-                productsDropdown.style.display = "block";
-                overlay.style.display = "block";
-                productsLink.classList.add("active");
-            }
-        });
-
-        document.addEventListener("click", function () {
-            productsDropdown.style.display = "none";
-            productsLink.classList.remove("active");
-        });
-    }
+        }
+    });
 });

@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const servicesLink = document.getElementById("services-link");
     const servicesDropdown = document.getElementById("services-dropdown");
     const servicesOptions = document.getElementById("services-options");
+    const productsLink = document.getElementById("products-link");
+    const productsDropdown = document.getElementById("products-dropdown");
+    const productsOptions = document.getElementById("products-options");
     const overlay = document.getElementById("overlay");
 
     if (companyLink && companyDropdown && overlay && companyOptions) {
@@ -63,6 +66,39 @@ document.addEventListener("DOMContentLoaded", function () {
         document.addEventListener("click", function () {
             servicesDropdown.style.display = "none";
             servicesLink.classList.remove("active");
+        });
+    }
+
+    if (productsLink && productsDropdown && overlay && productsOptions) {
+        productsLink.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const isVisible = productsDropdown.style.display === "block";
+
+            // Diğer dropdownları kapat
+            companyDropdown.style.display = "none";
+            companyLink.classList.remove("active");
+            servicesDropdown.style.display = "none";
+            servicesLink.classList.remove("active");
+
+            if (isVisible) {
+                productsDropdown.style.display = "none";
+                overlay.style.display = "none";
+                productsLink.classList.remove("active");
+            } else {
+                const rect = productsLink.getBoundingClientRect();
+                productsOptions.style.setProperty("--company-offset", rect.left + "px");
+
+                productsDropdown.style.display = "block";
+                overlay.style.display = "block";
+                productsLink.classList.add("active");
+            }
+        });
+
+        document.addEventListener("click", function () {
+            productsDropdown.style.display = "none";
+            productsLink.classList.remove("active");
         });
     }
 });

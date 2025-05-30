@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const companyLink = document.getElementById("company-link");
     const companyDropdown = document.getElementById("company-dropdown");
     const companyOptions = document.getElementById("company-options");
+    const servicesLink = document.getElementById("services-link");
+    const servicesDropdown = document.getElementById("services-dropdown");
+    const servicesOptions = document.getElementById("services-options");
     const overlay = document.getElementById("overlay");
 
     if (companyLink && companyDropdown && overlay && companyOptions) {
@@ -29,6 +32,37 @@ document.addEventListener("DOMContentLoaded", function () {
             companyDropdown.style.display = "none";
             overlay.style.display = "none";
             companyLink.classList.remove("active");
+        });
+    }
+
+    if (servicesLink && servicesDropdown && overlay && servicesOptions) {
+        servicesLink.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const isVisible = servicesDropdown.style.display === "block";
+
+            // Önce diğer dropdownları kapat
+            companyDropdown.style.display = "none";
+            companyLink.classList.remove("active");
+
+            if (isVisible) {
+                servicesDropdown.style.display = "none";
+                overlay.style.display = "none";
+                servicesLink.classList.remove("active");
+            } else {
+                const rect = servicesLink.getBoundingClientRect();
+                servicesOptions.style.setProperty("--company-offset", rect.left + "px");
+
+                servicesDropdown.style.display = "block";
+                overlay.style.display = "block";
+                servicesLink.classList.add("active");
+            }
+        });
+
+        document.addEventListener("click", function () {
+            servicesDropdown.style.display = "none";
+            servicesLink.classList.remove("active");
         });
     }
 });

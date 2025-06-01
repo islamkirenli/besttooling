@@ -4,45 +4,33 @@ document.addEventListener("DOMContentLoaded", function () {
     const dropdowns = [
         {
             linkId: "company-link",
-            dropdownId: "company-dropdown",
-            optionsId: "company-options"
+            dropdownId: "company-dropdown"
         },
         {
             linkId: "services-link",
-            dropdownId: "services-dropdown",
-            optionsId: "services-options"
+            dropdownId: "services-dropdown"
         },
         {
             linkId: "products-link",
-            dropdownId: "products-dropdown",
-            optionsId: "products-options"
+            dropdownId: "products-dropdown"
         }
     ];
 
-    dropdowns.forEach(({ linkId, dropdownId, optionsId }) => {
+    dropdowns.forEach(({ linkId, dropdownId }) => {
         const link = document.getElementById(linkId);
         const dropdown = document.getElementById(dropdownId);
-        const options = document.getElementById(optionsId);
 
-        if (link && dropdown && overlay && options) {
+        if (link && dropdown) {
             link.addEventListener("click", function (e) {
                 e.preventDefault();
                 e.stopPropagation();
 
                 const isVisible = dropdown.style.display === "block";
 
-                // Tüm dropdownları kapat
-                dropdowns.forEach(({ linkId, dropdownId }) => {
-                    document.getElementById(dropdownId).style.display = "none";
-                    document.getElementById(linkId).classList.remove("active");
-                });
-                overlay.style.display = "none";
+                // Diğerlerini kapat
+                closeAllDropdowns();
 
-                // Eğer tıklanan zaten açıksa tekrar açma
                 if (!isVisible) {
-                    const rect = link.getBoundingClientRect();
-                    options.style.setProperty("--company-offset", rect.left + "px");
-
                     dropdown.style.display = "block";
                     overlay.style.display = "block";
                     link.classList.add("active");
@@ -51,16 +39,23 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Navbar dışına tıklanınca dropdownları kapat
-    document.addEventListener("click", function (event) {
-        const isClickInside = event.target.closest(".nav-link") || event.target.closest(".mega-dropdown");
-
-        if (!isClickInside) {
-            dropdowns.forEach(({ linkId, dropdownId }) => {
-                document.getElementById(dropdownId).style.display = "none";
-                document.getElementById(linkId).classList.remove("active");
-            });
-            overlay.style.display = "none";
+    // Overlay veya dış tıklama
+    overlay.addEventListener("click", closeAllDropdowns);
+    document.addEventListener("click", function (e) {
+        if (!e.target.closest('.mega-dropdown') && !e.target.closest('.nav-link')) {
+            closeAllDropdowns();
         }
     });
+
+    function closeAllDropdowns() {
+        dropdowns.forEach(({ linkId, dropdownId }) => {
+            const d = document.getElementById(dropdownId);
+            const l = document.getElementById(linkId);
+            if (d && l) {
+                d.style.display = "none";
+                l.classList.remove("active");
+            }
+        });
+        overlay.style.display = "none";
+    }
 });

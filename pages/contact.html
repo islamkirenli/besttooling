@@ -17,9 +17,9 @@
                 <span class="subtext">best solution</span>
             </div>
             <nav class="nav-links">
-                <a href="../index.html" class="nav-link">Company</a>
-                <a href="../index.html" class="nav-link">Services</a>
-                <a href="../index.html" class="nav-link">Products</a>
+                <a href="javascript:void(0);" class="nav-link" id="company-link">Company</a>
+                <a href="javascript:void(0);" class="nav-link" id="services-link">Services</a>
+                <a href="javascript:void(0);" class="nav-link" id="products-link">Products</a>
                 <a href="technical-infrastructure.html" class="nav-link">Technical Infrastructure</a>
                 <a href="contact.html" class="nav-link active">Contact</a>
             </nav>
@@ -35,6 +35,34 @@
 
     <div class="navbar-separator"></div>
 
+    <!-- Dropdowns and Overlay -->
+    <div class="mega-dropdown" id="company-dropdown">
+        <div class="mega-options" id="company-options">
+            <a href="../pages/company/overview.html">Overview</a>
+            <a href="../pages/company/vision-mission.html">Vision & Mission</a>
+            <a href="../pages/company/policies.html">Our Policies</a>
+            <a href="../pages/company/certificates.html">Certificates</a>
+        </div>
+    </div>
+    <div class="mega-dropdown" id="services-dropdown">
+        <div class="mega-options" id="services-options">
+            <a href="../pages/services/plastic-injection.html">Plastic Injection Mold Manufacturing</a>
+            <a href="../pages/services/special-molds.html">Special Molds</a>
+            <a href="../pages/services/machining-fixture.html">Machining and Fixture</a>
+            <a href="../pages/services/design-management.html">Mold Design and Project Management</a>
+        </div>
+    </div>
+    <div class="mega-dropdown" id="products-dropdown">
+        <div class="mega-options" id="products-options">
+            <a href="../pages/products/automotive.html">Automotive</a>
+            <a href="../pages/products/household.html">Household Appliances</a>
+            <a href="../pages/products/electronics.html">Electrical & Electronic</a>
+            <a href="../pages/products/aviation.html">Aviation</a>
+            <a href="../pages/products/medical.html">Medical</a>
+        </div>
+    </div>
+    <div id="overlay" class="overlay"></div>
+    
     <section class="hero-banner">
         <h1>CONTACT US</h1>
     </section>
@@ -79,7 +107,7 @@
             <span class="subtext">best solution</span>
         </div>
     </footer>
-
+    <script src="../script.js"></script>
 </body>
 
 </html>

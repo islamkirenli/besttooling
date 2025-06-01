@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Best Tooling</title>
     <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
     <header class="navbar">
         <div class="nav-left">
@@ -16,9 +14,9 @@
                 <span class="subtext">best solution</span>
             </div>
             <nav class="nav-links">
-                <a href="#" class="nav-link" id="company-link">Company</a>
-                <a href="#" class="nav-link" id="services-link">Services</a>
-                <a href="#" class="nav-link" id="products-link">Products</a>
+                <a href="javascript:void(0);" class="nav-link" id="company-link">Company</a>
+                <a href="javascript:void(0);" class="nav-link" id="services-link">Services</a>
+                <a href="javascript:void(0);" class="nav-link" id="products-link">Products</a>
                 <a href="pages/technical-infrastructure.html" class="nav-link">Technical Infrastructure</a>
                 <a href="pages/contact.html" class="nav-link">Contact</a>
             </nav>
@@ -31,41 +29,48 @@
             <span class="search">🔍 Search</span>
         </div>
     </header>
+
     <div class="navbar-separator"></div>
     <div id="overlay" class="overlay"></div>
+
+    <!-- Dropdowns -->
     <div class="mega-dropdown" id="company-dropdown">
         <div class="mega-options" id="company-options">
-            <a href="#">Overview</a>
-            <a href="#">Vision & Mission</a>
-            <a href="#">Our Policies</a>
-            <a href="#">Certificates</a>
+            <a href="pages/company/overview.html">Overview</a>
+            <a href="pages/company/vision-mission.html">Vision & Mission</a>
+            <a href="pages/company/policies.html">Our Policies</a>
+            <a href="pages/company/certificates.html">Certificates</a>
         </div>
     </div>
     <div class="mega-dropdown" id="services-dropdown">
         <div class="mega-options" id="services-options">
-            <a href="#">Plastic Injection Mold Manufacturing</a>
-            <a href="#">Special Molds</a>
-            <a href="#">Machining and Fixture</a>
-            <a href="#">Mold Design and Project Management</a>
+            <a href="pages/services/plastic-injection.html">Plastic Injection Mold Manufacturing</a>
+            <a href="pages/services/special-molds.html">Special Molds</a>
+            <a href="pages/services/machining-fixture.html">Machining and Fixture</a>
+            <a href="pages/services/design-management.html">Mold Design and Project Management</a>
         </div>
     </div>
     <div class="mega-dropdown" id="products-dropdown">
         <div class="mega-options" id="products-options">
-            <a href="#">Automotive</a>
-            <a href="#">Household Appliances</a>
-            <a href="#">Electrical & Electronic</a>
-            <a href="#">Aviation</a>
-            <a href="#">Medical</a>
+            <a href="pages/products/automotive.html">Automotive</a>
+            <a href="pages/products/household.html">Household Appliances</a>
+            <a href="pages/products/electronics.html">Electrical & Electronic</a>
+            <a href="pages/products/aviation.html">Aviation</a>
+            <a href="pages/products/medical.html">Medical</a>
         </div>
     </div>
+
+    <!-- İçerik -->
     <section class="hero-banner">
         <h1>WE SHAPE QUALITY</h1>
         <h1>WE CREATE THE FUTURE</h1>
     </section>
+
     <main style="height: 2000px; background-color: #f5f5f5;">
         <h2 style="padding: 150px 40px;">İçerik buraya gelecek</h2>
     </main>
 
+    <!-- Footer -->
     <footer class="contact-footer">
         <div class="footer-content">
             <div class="footer-left-container">
@@ -99,7 +104,7 @@
             <span class="subtext">best solution</span>
         </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
-
 </html>

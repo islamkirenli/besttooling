@@ -62,21 +62,80 @@
         </div>
     </div>
     <div id="overlay" class="overlay"></div>
-    
-    <section class="hero-banner">
-        <h1>CONTACT US</h1>
+
+    <section class="contact-form-section" style="padding: 80px 5%; background-color: #f5f5f5;">
+        <h2 style="text-align: center; margin-bottom: 40px;">Contact Us</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center;">
+            <!-- Left: Form -->
+            <form action="https://formsubmit.co/islamkirenli4178@gmail.com" method="POST" class="contact-form"
+                style="flex: 1 1 55%; min-width: 280px;">
+                <div style="margin-bottom: 20px;">
+                    <label for="name">Full Name</label><br>
+                    <input type="text" id="name" name="name" placeholder="Your full name" required
+                        style="width: 100%; padding: 10px; margin-top: 5px;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label for="email">Email</label><br>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required
+                        style="width: 100%; padding: 10px; margin-top: 5px;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label for="phone">Phone</label><br>
+                    <input type="tel" id="phone" name="phone" placeholder="+90 555 555 55 55"
+                        style="width: 100%; padding: 10px; margin-top: 5px;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label for="subject">Subject</label><br>
+                    <input type="text" id="subject" name="subject" placeholder="Message subject" required
+                        style="width: 100%; padding: 10px; margin-top: 5px;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label for="message">Message</label><br>
+                    <textarea id="message" name="message" rows="6" placeholder="Type your message here..." required
+                        style="width: 100%; padding: 10px; margin-top: 5px;"></textarea>
+                </div>
+                <input type="hidden" name="_subject" value="New Contact Form Message from Website">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="http://127.0.0.1:5500/pages/thanks.html">
+                <div style="text-align: center;">
+                    <button type="submit"
+                        style="padding: 12px 24px; background-color: black; color: white; border: none; cursor: pointer;">Send
+                        Message</button>
+                </div>
+            </form>
+
+            <!-- Right: Contact Info -->
+            <div
+                style="flex: 1 1 35%; min-width: 250px; display: flex; flex-direction: column; justify-content: flex-start;">
+                <img src="../img/logo.png" alt="Best Tooling Logo" style="max-width: 400px; margin-bottom: 30px;">
+                <div style="margin-bottom: 20px;">
+                    <strong>📍 Address:</strong><br>
+                    İnönü Mah. Gebze Güzeller OSB, Cumhuriyet Cad.
+                    Kazım Karabekir Sk., No:2/5, Gebze, Kocaeli 41400, TR
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <strong>📞 Phone:</strong><br>
+                    +90 262 503 99 62
+                </div>
+                <div>
+                    <strong>✉️ Email:</strong><br>
+                    info@besttooling.com.tr
+                </div>
+            </div>
+        </div>
     </section>
 
-    <main style="padding: 80px 5%; background-color: #f5f5f5;">
-        <h2>We’d love to hear from you</h2>
-        <p>You can reach us by phone, email, or by visiting our office.</p>
 
-        <ul>
-            <li><strong>Phone:</strong> +90 555 555 55 55</li>
-            <li><strong>Email:</strong> info@besttooling.com</li>
-            <li><strong>Address:</strong> Organize Sanayi Bölgesi, İstanbul, Türkiye</li>
-        </ul>
-    </main>
+    <section style="padding: 0 5% 80px 5%;">
+        <h2 style="text-align: center; margin: 60px 0 20px;">Our Location</h2>
+        <div style="width: 100%; height: 800px;">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3018.709935266181!2d29.44667587664595!3d40.8343345301163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cb278a9e02798f%3A0x624b77548165f2a8!2sBEST%20TOOLING!5e0!3m2!1str!2str!4v1748780501806!5m2!1str!2str"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
 
     <footer class="contact-footer">
         <div class="footer-content">

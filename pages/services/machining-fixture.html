@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Machining & Fixture - Best Tooling</title>
+    <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <main style="padding: 100px 5%;">
+        <h1>Machining & Fixture</h1>
+        <p>Our machining and fixture services ensure precise assembly, inspection, and part handling systems tailored to
+            your project needs.</p>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        fetch("/includes/header.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+                const script = document.createElement('script');
+                script.src = "/script.js";
+                script.onload = () => { if (typeof initDropdowns === "function") initDropdowns(); };
+                document.body.appendChild(script);
+            });
+
+        fetch("/includes/footer.html")
+            .then(res => res.text())
+            .then(data => document.getElementById("footer-placeholder").innerHTML = data);
+    </script>
+</body>
+
+</html>

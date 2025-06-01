@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Automotive - Best Tooling</title>
+    <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <main style="padding: 100px 5%;">
+        <h1>Automotive</h1>
+        <p>Explore our high-precision molds and components developed for the automotive industry.</p>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        fetch("/includes/header.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+                const script = document.createElement('script');
+                script.src = "/script.js";
+                script.onload = () => { if (typeof initDropdowns === "function") initDropdowns(); };
+                document.body.appendChild(script);
+            });
+
+        fetch("/includes/footer.html")
+            .then(res => res.text())
+            .then(data => document.getElementById("footer-placeholder").innerHTML = data);
+    </script>
+</body>
+
+</html>

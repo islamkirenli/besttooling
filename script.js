@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+function initDropdowns() {
     const overlay = document.getElementById("overlay");
 
     const dropdowns = [
@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 const isVisible = dropdown.style.display === "block";
 
-                // Diğerlerini kapat
                 closeAllDropdowns();
 
                 if (!isVisible) {
@@ -39,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Overlay veya dış tıklama
     overlay.addEventListener("click", closeAllDropdowns);
     document.addEventListener("click", function (e) {
         if (!e.target.closest('.mega-dropdown') && !e.target.closest('.nav-link')) {
@@ -58,4 +56,4 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         overlay.style.display = "none";
     }
-});
+}

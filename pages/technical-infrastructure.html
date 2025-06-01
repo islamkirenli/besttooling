@@ -4,63 +4,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Technical Infrastructure</title>
+    <title>Technical Infrastructure - Best Tooling</title>
     <link rel="stylesheet" href="../style.css" />
 </head>
 
 <body>
-
-    <header class="navbar">
-        <div class="nav-left">
-            <a href="/index.html" class="logo">
-                <img src="../img/logo.png" alt="Best Tooling Logo" class="logo-img">
-            </a>
-            <nav class="nav-links">
-                <a href="javascript:void(0);" class="nav-link" id="company-link">Company</a>
-                <a href="javascript:void(0);" class="nav-link" id="services-link">Services</a>
-                <a href="javascript:void(0);" class="nav-link" id="products-link">Products</a>
-                <a href="technical-infrastructure.html" class="nav-link active">Technical Infrastructure</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-            </nav>
-        </div>
-        <div class="nav-right">
-            <div class="language-selector">
-                Worldwide (EN) <span class="arrow">▼</span>
-            </div>
-            <div class="separator"></div>
-            <span class="search">🔍 Search</span>
-        </div>
-    </header>
-
-    <div class="navbar-separator"></div>
-
-    <!-- Dropdowns and Overlay -->
-    <div class="mega-dropdown" id="company-dropdown">
-        <div class="mega-options" id="company-options">
-            <a href="../pages/company/overview.html">Overview</a>
-            <a href="../pages/company/vision-mission.html">Vision & Mission</a>
-            <a href="../pages/company/policies.html">Our Policies</a>
-            <a href="../pages/company/certificates.html">Certificates</a>
-        </div>
-    </div>
-    <div class="mega-dropdown" id="services-dropdown">
-        <div class="mega-options" id="services-options">
-            <a href="../pages/services/plastic-injection.html">Plastic Injection Mold Manufacturing</a>
-            <a href="../pages/services/special-molds.html">Special Molds</a>
-            <a href="../pages/services/machining-fixture.html">Machining and Fixture</a>
-            <a href="../pages/services/design-management.html">Mold Design and Project Management</a>
-        </div>
-    </div>
-    <div class="mega-dropdown" id="products-dropdown">
-        <div class="mega-options" id="products-options">
-            <a href="../pages/products/automotive.html">Automotive</a>
-            <a href="../pages/products/household.html">Household Appliances</a>
-            <a href="../pages/products/electronics.html">Electrical & Electronic</a>
-            <a href="../pages/products/aviation.html">Aviation</a>
-            <a href="../pages/products/medical.html">Medical</a>
-        </div>
-    </div>
-    <div id="overlay" class="overlay"></div>
+    <!-- Header placeholder -->
+    <div id="navbar-placeholder"></div>
 
     <section class="hero-banner">
         <h1>TECHNICAL INFRASTRUCTURE</h1>
@@ -80,35 +30,27 @@
         </ul>
     </main>
 
-    <footer class="contact-footer">
-        <div class="footer-content">
-            <div class="footer-left-container">
-                <h2>Contact Us</h2>
-                <div class="contact-item">
-                    <span class="icon">📞</span>
-                    <span>+90 262 503 99 62</span>
-                </div>
-                <div class="contact-item">
-                    <span class="icon">📍</span>
-                    <span>İnönü Mah. Gebze Güzeller OSB, Cumhuriyet Cad. Kazım Karabekir Sk., No:2/5, Gebze, Kocaeli 41400, TR</span>
-                </div>
-            </div>
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
 
-            <div class="footer-right-container">
-                <h2>Follow Us</h2>
-                <p class="follow-text">Get an inside look at the world of injection molding.</p>
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com" target="_blank"><img src="img/linkedin.svg" alt="LinkedIn" /></a>
-                    <a href="https://www.instagram.com" target="_blank"><img src="img/instagram.svg"
-                            alt="Instagram" /></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-branding">
-            <img src="../img/logo.png" alt="Best Tooling Logo" class="footer-logo-img">
-        </div>
-    </footer>
-    <script src="../script.js"></script>
+    <!-- Scripts to load header and footer dynamically -->
+    <script>
+        fetch("/includes/header.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+                const script = document.createElement("script");
+                script.src = "/script.js";
+                script.onload = () => { if (typeof initDropdowns === "function") initDropdowns(); };
+                document.body.appendChild(script);
+            });
+
+        fetch("/includes/footer.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+    </script>
 </body>
 
 </html>

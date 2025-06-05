@@ -256,7 +256,7 @@ body {
 ------------------------------ */
 .mega-dropdown {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 63px;
   left: 0;
   width: 100%;

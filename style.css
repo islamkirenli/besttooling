@@ -14,8 +14,10 @@ body {
   font-family: Arial, sans-serif;
   background-color: #fff;
   color: #000;
-  overflow-x: hidden; /* EKLENDİ */
-  max-width: 100vw;    /* EKLENDİ */
+  overflow-x: hidden;
+  /* EKLENDÄ° */
+  max-width: 100vw;
+  /* EKLENDÄ° */
 }
 
 /* ------------------------------
@@ -230,7 +232,7 @@ body {
 }
 
 /* ------------------------------
-  NAVBAR SEÇİLİ ÖGE
+  NAVBAR SEÃ‡Ä°LÄ° Ã–GE
 ------------------------------ */
 .nav-links a {
   position: relative;
@@ -245,7 +247,7 @@ body {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -18px; 
+  bottom: -18px;
   width: 100%;
   height: 3px;
   background-color: white;
@@ -308,11 +310,12 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* yarı saydam siyah */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* yarÄ± saydam siyah */
   z-index: 998;
 }
 
-/* LOGO GÖRSELLERİ */
+/* LOGO GÃ–RSELLERÄ° */
 .logo {
   display: flex;
   align-items: center;
@@ -333,13 +336,14 @@ body {
 
 /* RESPONSIVE AYARLAR */
 @media (max-width: 768px) {
+
   .logo-img,
   .footer-logo-img {
     height: 30px;
   }
 }
 
-/* Sayfa başlığı */
+/* Sayfa baÅŸlÄ±ÄŸÄ± */
 .infrastructure-title {
   padding: 50px 5%;
   background-color: #fff;
@@ -351,7 +355,7 @@ body {
   font-weight: bold;
 }
 
-/* Makine kartları */
+/* Makine kartlarÄ± */
 .machines-section {
   padding: 50px 5%;
   background-color: #f5f5f5;
@@ -374,7 +378,8 @@ body {
 
 .machine-image {
   width: 100%;
-  max-width: 45%;     /* 600 yerine tam uyumlu */
+  max-width: 45%;
+  /* 600 yerine tam uyumlu */
   height: auto;
   flex-shrink: 1;
   box-sizing: border-box;
@@ -430,4 +435,333 @@ body {
   height: auto;
   object-fit: cover;
   display: block;
+}
+
+.services-hero-banner-image {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.services-hero-banner-image img.services-hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Hizmet bÃ¶lÃ¼mÃ¼ */
+.services-section {
+  padding: 80px 5%;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.service-item {
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.service-item h2 {
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.service-item p {
+  font-size: 24px;
+  color: #333;
+  text-align: left;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .service-item {
+    padding: 0 20px;
+  }
+}
+
+.service-list {
+  list-style-type: disc;
+  padding-left: 50px;
+  margin: 50px 0;
+  color: #333;
+  font-size: 24px;
+}
+
+.service-image-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.service-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* OUR PORTFOLIO */
+.portfolio-section {
+  background-color: #f5f5f5;
+  padding: 80px 5%;
+  text-align: center;
+}
+
+.portfolio-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.portfolio-wrapper {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.portfolio-cards {
+  display: flex;
+  gap: 30px;
+  justify-content: flex-start; /* sola hizala */
+  flex-wrap: nowrap;
+  max-width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0 10px;
+}
+
+.portfolio-card {
+  flex: 0 0 calc(33.33% - 20px); /* 3 kart görünür */
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 20px;
+  height: 580px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  scroll-snap-align: start;
+  overflow: hidden;
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.portfolio-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Navigasyon OklarÄ± */
+.portfolio-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #000;
+  color: #f5f5f5;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.portfolio-nav.left {
+  left: -20px;
+}
+
+.portfolio-nav.right {
+  right: -20px;
+}
+
+@media (max-width: 768px) {
+  .portfolio-cards {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .portfolio-nav {
+    display: none;
+  }
+}
+
+.sub-service {
+  margin-top: 30px;
+}
+
+.sub-service h3 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.sub-service p {
+  font-size: 24px;
+  line-height: 1.6;
+  color: #333;
+  text-align: left;
+}
+
+/* Moldflow GÃ¶rselleri */
+.moldflow-grid {
+  margin-top: 20px;
+}
+
+.moldflow-horizontal {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+  display: block;
+  border-radius: 8px;
+}
+
+.moldflow-2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.moldflow-2x2 img {
+  width: 100%;
+  border-radius: 8px;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .moldflow-2x2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.portfolio-carousel-container {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.portfolio-carousel-track {
+  display: flex;
+  gap: 30px;
+  align-items: stretch;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 0 10px;
+  scrollbar-width: none; /* Firefox */
+}
+
+.portfolio-carousel-track::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.portfolio-images-top {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+  flex-grow: 1; /* Yeni: kalan boşluğu kaplaması için */
+  max-height: 250px; /* Kartın yüksekliğini aşmaması için sınır */
+  overflow: hidden;
+}
+
+.portfolio-images-top img {
+  width: 50%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.portfolio-info {
+  text-align: center;
+  padding-top: 10px;
+  flex-shrink: 0;
+  margin: 10px 0;
+}
+
+.portfolio-info h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0 5px;
+}
+
+.portfolio-info p {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.portfolio-main-img {
+  width: auto;
+  height: 150px;           
+  max-height: 150px;       
+  object-fit: contain;
+  margin-top: auto;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.portfolio-carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 2;
+}
+
+.portfolio-carousel-nav.left {
+  left: 10px;
+}
+
+.portfolio-carousel-nav.right {
+  right: 10px;
+}
+
+@media (max-width: 768px) {
+  .portfolio-card {
+    flex: 0 0 100%;
+    height: auto;
+  }
+
+  .portfolio-carousel-nav {
+    display: none;
+  }
+
+  .portfolio-images-top img {
+    height: 100%;
+  }
+
+  .portfolio-main-img {
+    height: 100px;
+  }
 }

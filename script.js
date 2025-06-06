@@ -57,3 +57,21 @@ function initDropdowns() {
         overlay.style.display = "none";
     }
 }
+
+function initPortfolioCarousel() {
+    const track = document.querySelector(".portfolio-carousel-track");
+    const leftBtn = document.querySelector(".portfolio-carousel-nav.left");
+    const rightBtn = document.querySelector(".portfolio-carousel-nav.right");
+
+    if (!track || !leftBtn || !rightBtn) return;
+
+    const scrollAmount = track.clientWidth / 3;
+
+    leftBtn.addEventListener("click", () => {
+        track.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    });
+
+    rightBtn.addEventListener("click", () => {
+        track.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    });
+}

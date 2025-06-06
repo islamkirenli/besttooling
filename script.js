@@ -56,6 +56,19 @@ function initDropdowns() {
         });
         overlay.style.display = "none";
     }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        // Eğer URL'de hash varsa ve sayfa yüklenmişse ilgili bölüme kaydır
+        if (window.location.pathname.endsWith("/services.html") && window.location.hash) {
+            const id = window.location.hash.substring(1); // "#baslik" -> "baslik"
+            const target = document.getElementById(id);
+            if (target) {
+                setTimeout(() => {
+                    target.scrollIntoView({ behavior: "smooth", block: "start" });
+                }, 300); // Sayfa yüklenme süresi için küçük bekleme
+            }
+        }
+    });
 }
 
 function initPortfolioCarousel() {

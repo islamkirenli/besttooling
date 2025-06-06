@@ -462,6 +462,7 @@ body {
 .service-item {
   max-width: 950px;
   margin: 0 auto;
+  scroll-margin-top: 100px;
 }
 
 .service-item h2 {
@@ -764,4 +765,8 @@ body {
   .portfolio-main-img {
     height: 100px;
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }

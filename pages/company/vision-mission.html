@@ -11,10 +11,55 @@
 <body>
     <div id="navbar-placeholder"></div>
 
-    <main style="padding: 100px 5%;">
-        <h1>Vision & Mission</h1>
-        <p>Discover Best Tooling’s core values, long-term vision, and the mission that drives our innovation and
-            service.</p>
+    <main class="automotive-main">
+        <!-- Hero Banner -->
+        <section class="hero-banner automotive-hero">
+            <img src="/img/vision-banner.png.jpg" alt="Vision & Mission Banner" class="hero-image">
+        </section>
+
+        <section class="automotive-title">
+            <h1>Vision & Mission</h1>
+        </section>
+
+        <section class="accordion-container">
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    Vision
+                    <span class="icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>To be a globally competitive plastic injection mold supplier,
+                        delivering products on time without compromising quality,
+                        prioritizing customer satisfaction, and staying competitive.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    Mission
+                    <span class="icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>To establish our company as a leading supplier of high-quality plastic molds
+                        in both local and international markets through continuous improvement plans and organizational
+                        activities.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button">Values <span class="icon">+</span></button>
+                <div class="accordion-content">
+                    <p><strong>Quality:</strong> We are committed to ensuring the highest level of quality in our
+                        products and services.</p>
+                    <p><strong>Transparency:</strong> We foster a trustworthy partnership by maintaining open and honest
+                        communication with our customers.</p>
+                    <p><strong>Continuous Improvement:</strong> We continuously improve ourselves and our business
+                        processes while staying up to date with the latest technologies in the industry.</p>
+                    <p><strong>Customer Satisfaction:</strong> We make every effort to understand and meet the needs of
+                        our customers.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <div id="footer-placeholder"></div>
@@ -33,6 +78,34 @@
         fetch("/includes/footer.html")
             .then(res => res.text())
             .then(data => document.getElementById("footer-placeholder").innerHTML = data);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const items = document.querySelectorAll('.accordion-item');
+
+            items.forEach(item => {
+                const button = item.querySelector('.accordion-button');
+                const icon = button.querySelector('.icon');
+
+                button.addEventListener('click', () => {
+                    const isOpen = item.classList.contains('open');
+
+                    // Diğer açık olanları kapat
+                    items.forEach(i => {
+                        i.classList.remove('open');
+                        i.querySelector('.icon').textContent = '+';
+                    });
+
+                    // Bu item açıksa kapatma, değilse aç
+                    if (!isOpen) {
+                        item.classList.add('open');
+                        icon.textContent = '−';
+                    } else {
+                        item.classList.remove('open');
+                        icon.textContent = '+';
+                    }
+                });
+            });
+        });
     </script>
 </body>
 

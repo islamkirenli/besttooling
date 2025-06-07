@@ -11,9 +11,50 @@
 <body>
     <div id="navbar-placeholder"></div>
 
-    <main style="padding: 100px 5%;">
-        <h1>Automotive</h1>
-        <p>Explore our high-precision molds and components developed for the automotive industry.</p>
+    <main class="automotive-main">
+        <section class="hero-banner automotive-hero">
+            <img src="/img/automotive-banner.jpg" alt="Automotive Hero" class="hero-image">
+        </section>
+
+        <section class="automotive-title">
+            <h1>Automotive</h1>
+        </section>
+
+        <section class="automotive-grid">
+            <div class="product-card">
+                <img src="/img/products/auto/auto1a.png" alt="Auto Product 1a">
+                <img src="/img/products/auto/auto1b.png" alt="Auto Product 1b">
+            </div>
+            <div class="product-card"><img src="/img/products/auto/auto2.png" alt="Auto Product 2"></div>
+            <div class="product-card"><img src="/img/products/auto/auto3.png" alt="Auto Product 3"></div>
+            <div class="product-card">
+                <img src="/img/products/auto/auto4a.png" alt="Auto Product 4a">
+                <img src="/img/products/auto/auto4b.png" alt="Auto Product 4b">
+            </div>
+            <div class="product-card"><img src="/img/products/auto/auto5.png" alt="Auto Product 5"></div>
+            <div class="product-card"><img src="/img/products/auto/auto6.png" alt="Auto Product 6"></div>
+            <div class="product-card"><img src="/img/products/auto/auto7.png" alt="Auto Product 7"></div>
+            <div class="product-card"><img src="/img/products/auto/auto8.png" alt="Auto Product 8"></div>
+            <div class="product-card">
+                <img src="/img/products/auto/auto9a.png" alt="Auto Product 9a">
+                <img src="/img/products/auto/auto9b.png" alt="Auto Product 9b">
+            </div>
+            <div class="product-card"><img src="/img/products/auto/auto10.png" alt="Auto Product 10"></div>
+            <div class="product-card"><img src="/img/products/auto/auto11.png" alt="Auto Product 11"></div>
+            <div class="product-card"><img src="/img/products/auto/auto12.png" alt="Auto Product 12"></div>
+            <div class="product-card">
+                <img src="/img/products/auto/auto13a.png" alt="Auto Product 13a">
+                <img src="/img/products/auto/auto13b.png" alt="Auto Product 13b">
+            </div>
+            <div class="product-card"><img src="/img/products/auto/auto14.png" alt="Auto Product 14"></div>
+            <div class="product-card"><img src="/img/products/auto/auto15.png" alt="Auto Product 15"></div>
+            <div class="product-card"><img src="/img/products/auto/auto16.png" alt="Auto Product 16"></div>
+            <div class="product-card"><img src="/img/products/auto/auto17.png" alt="Auto Product 17"></div>
+            <div class="product-card"><img src="/img/products/auto/auto18.png" alt="Auto Product 18"></div>
+            <div class="product-card"><img src="/img/products/auto/auto19.png" alt="Auto Product 19"></div>
+            <div class="product-card"><img src="/img/products/auto/auto20.png" alt="Auto Product 20"></div>
+            <div class="product-card"><img src="/img/products/auto/auto21.png" alt="Auto Product 21"></div>
+        </section>
     </main>
 
     <div id="footer-placeholder"></div>
@@ -32,7 +73,53 @@
         fetch("/includes/footer.html")
             .then(res => res.text())
             .then(data => document.getElementById("footer-placeholder").innerHTML = data);
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const images = Array.from(document.querySelectorAll('.product-card img'));
+            const lightbox = document.getElementById('lightbox-overlay');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const closeBtn = document.getElementById('lightbox-close');
+            const prevBtn = document.getElementById('lightbox-prev');
+            const nextBtn = document.getElementById('lightbox-next');
+            let currentIndex = 0;
+
+            images.forEach((img, index) => {
+                img.addEventListener('click', () => {
+                    lightbox.style.display = 'flex';
+                    lightboxImage.src = img.src;
+                    currentIndex = index;
+                });
+            });
+
+            closeBtn.addEventListener('click', () => {
+                lightbox.style.display = 'none';
+            });
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % images.length;
+                lightboxImage.src = images[currentIndex].src;
+            });
+
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                lightboxImage.src = images[currentIndex].src;
+            });
+
+            document.addEventListener('keydown', e => {
+                if (e.key === 'Escape') lightbox.style.display = 'none';
+            });
+        });
     </script>
+
+    <!-- Lightbox -->
+    <div id="lightbox-overlay" class="lightbox-overlay">
+        <span id="lightbox-close" class="lightbox-close">&times;</span>
+        <img id="lightbox-image" class="lightbox-image" src="" alt="">
+        <div class="lightbox-nav">
+            <span id="lightbox-prev" class="lightbox-arrow">&#10094;</span>
+            <span id="lightbox-next" class="lightbox-arrow">&#10095;</span>
+        </div>
+    </div>
 </body>
 
 </html>

@@ -1042,3 +1042,32 @@ html {
   margin-right: 8px;
   vertical-align: middle;
 }
+
+.policies-main {
+  padding-bottom: 100px;
+}
+
+.policies-column {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 60px 5%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.policy-block {
+  text-align: left;
+}
+
+.policy-block h2 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.policy-block p {
+  font-size: 1.05em;
+  line-height: 1.7;
+}

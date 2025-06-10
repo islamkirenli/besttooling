@@ -1032,6 +1032,13 @@ html {
 .accordion-item.open .accordion-content {
   padding-top: 20px;
   padding-bottom: 20px;
-  max-height: 1000px; /* Uzun içeriklere yetecek kadar büyük */
+  max-height: 1000px; 
   opacity: 1;
+}
+
+.value-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+  vertical-align: middle;
 }

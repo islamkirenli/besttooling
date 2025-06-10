@@ -847,13 +847,15 @@ html {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 40px; /* Görselin ekran kenarına yapışmasını engeller */
+  box-sizing: border-box;
 }
 
 .lightbox-image {
-  max-width: 90%;
-  max-height: 80%;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
-  margin-bottom: 20px;
+  border-radius: 6px;
 }
 
 .lightbox-close {
@@ -1070,4 +1072,36 @@ html {
 .policy-block p {
   font-size: 1.05em;
   line-height: 1.7;
+}
+
+.certificates-gallery-section {
+  padding: 40px 5%;
+  background-color: #fff;
+}
+
+.certificates-gallery {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.certificates-gallery img {
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.certificates-gallery img:hover {
+  transform: scale(1.05);
+}
+
+.ukub-image {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  display: inline-block;
 }

@@ -16,7 +16,10 @@
             Worldwide (EN) <span class="arrow">▼</span>
         </div>
         <div class="separator"></div>
-        <span class="search">🔍 Search</span>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search..." onkeydown="handleSearchKey(event)" />
+            <div id="searchResults" class="search-results"></div>
+        </div>
     </div>
 </header>
 
